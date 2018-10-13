@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+
+{% block content %}
+	{% for result in results %}
+		<div class = "col-12 question">
+			{{ result[0].question }}
+		</div>
+		<table border="1" id="results">
+			<tr class = "headers">
+				<td>
+					Option
+				</td>
+				<td>
+					# of votes
+				</td>
+				<td>
+					GMs
+				</td>
+			</tr>
+				<tr>
+					{% if result[0].option1 %}
+						<td>{{ result[0].option1 }}</td>
+						<td>{{ result[1] | length }}</td>
+						<td>
+							{% for gm in result[1] %}
+								{{ gm }}
+							{% endfor %}
+						</td>
+					{% endif %}
+				</tr>
+				<tr>
+					{% if result[0].option2 %}
+						<td>{{ result[0].option2 }}</td>
+						<td>{{ result[2] | length }}</td>
+						<td>
+							{% for gm in result[2] %}
+								{{ gm }}
+							{% endfor %}
+						</td>
+					{% endif %}
+				</tr>
+				<tr>
+					{% if result[0].option3 %}
+						<td>{{ result[0].option3 }}</td>
+						<td>{{ result[3] | length }}</td>
+						<td>
+							{% for gm in result[3] %}
+								{{ gm }}
+							{% endfor %}
+						</td>
+					{% endif %}
+				</tr>
+				<tr>
+					{% if result[0].option4 %}
+						<td>{{ result[0].option4 }}</td>
+						<td>{{ result[4] | length }}</td>
+						<td>
+							{% for gm in result[4] %}
+								{{ gm }}
+							{% endfor %}
+						</td>
+					{% endif %}
+				</tr>
+				<tr>
+					{% if result[0].option5 %}
+						<td>{{ result[0].option5 }}</td>
+						<td>{{ result[5] | length }}</td>
+						<td>
+							{% for gm in result[5] %}
+								{{ gm }}
+							{% endfor %}
+						</td>
+					{% endif %}
+				</tr>
+		</table>
+		<br><br>
+	{% endfor %}
+{% endblock %}

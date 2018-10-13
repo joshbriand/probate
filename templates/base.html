@@ -1,0 +1,200 @@
+dev<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Probate Doctor!</title>
+    <style type="text/css">
+      * {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: borderbox;
+        -ms-box-sizing: borderbox;
+        box-sizing: border-box;
+      }
+
+      .flash{
+				font - weight: bold;
+				text - decoration: underline;
+				color:  # f94102;
+			}
+
+      .row {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;}
+
+      .col-1 {
+        width: 8.33%;
+      }
+
+      .col-2 {
+        width: 16.67%;
+      }
+
+      .col-3 {
+        width: 25%;
+      }
+
+      .col-4 {
+        width: 33.33%;
+      }
+
+      .col-5 {
+        width: 41.67%;
+      }
+
+      .col-6 {
+        width: 50%;
+      }
+
+      .col-7 {
+        width: 58.33%;
+      }
+
+      .col-8 {
+        width: 66.67%;
+      }
+
+      .col-9 {
+        width: 75%;
+      }
+
+      .col-10 {
+        width: 83.33%;
+      }
+
+      .col-11{
+        width: 91.67%;
+      }
+
+      .col-12{
+        width: 100%;
+      }
+
+      .push{margin-bottom: 70px}
+
+      .error {
+        color: red;
+      }
+
+      .question {
+        font-weight: bold;
+        width: 800px;
+      }
+
+      .headers {
+        font-weight: bold;
+      }
+
+      #links{
+        text-align: right;
+      }
+
+      hr.main{
+	      border: 2px solid;
+      }
+
+      hr.sub{
+        border: 1px dashed;
+        color: grey;
+      }
+
+      td{
+        width: 200px;
+      }
+
+      #results{
+        text-align: center;
+      }
+
+      #showOptions{
+        display: none;
+      }
+
+      #header{
+        position: fixed;
+        height: 70px;
+        top: 0;
+        background: lightgrey;
+        text-align: left;
+      }
+
+
+    </style>
+  </head>
+  <body>
+    <div class="grid">
+      <div class="row" id="header">
+        <div class="col-5" id="title">
+          <h1>Probate Doctor!</h1>
+        </div>
+          {% if admin == True %}
+            <div class="col-6">
+              <table>
+                <tr>
+                  <td>
+                    Logged in as <b>{{ user.username }}</b>
+                  </td>
+                  <td>
+                    <a href = "/addquestion">Add Question</a>
+                  </td>
+                  <td>
+                    <a href = "/adduser">Add User</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <a href = "/logout">
+                      <input type="submit" value="Log Out"></input>
+                    </a>
+                  </td>
+                  <td>
+                    <a href = "/deletequestion">Delete Quesion</a>
+                  </td>
+                  <td>
+                    <a href = "/deleteuser">Delete User</a>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          {% else %}
+            <div class="col-6">
+              <table>
+                <tr>
+                  <td>
+                    Logged in as <b>{{ user }}</b>
+                  </td>
+                  <td>
+                    <a href = "/logout">Log Out</a>
+                  </td>
+                  <td>
+                    <a href = "/changepassword">Change Password</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <a href = "/results">Results</a>
+                  </td>
+                  <td>
+                    <a href = "/form">Complete (or Update) Form</a>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          {% endif %}
+          <div class="flash col-md-4 text-center">
+            {% with messages=get_flashed_messages() %}
+              {% if messages %}
+                {% for message in messages %}
+                  {{ message }}
+                {% endfor %}
+              {% endif %}
+            {% endwith %}
+          </div>
+        </div>
+        <div class="push"></div>
+        {% block content %}
+        {% endblock %}
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,366 @@
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.row {
+  width: 100vw;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.row-1 {
+  height: 7vw;
+}
+
+.col-half {
+  width: 4.165vw;
+}
+
+.col-1 {
+  width: 8.33vw;
+}
+
+.col-2 {
+  width: 16.67vw;
+}
+
+.col-3 {
+  width: 25vw;
+}
+
+.col-4 {
+  width: 33.33vw;
+}
+
+.col-5 {
+  width: 41.67vw;
+}
+
+.col-6 {
+  width: 50vw;
+}
+
+.col-7 {
+  width: 58.33vw;
+}
+
+.col-8 {
+  width: 66.67vw;
+}
+
+.col-9 {
+  width: 75vw;
+}
+
+.col-10 {
+  width: 83.33vw;
+}
+
+.col-11 {
+  width: 91.67vw;
+}
+
+.col-12 {
+  width: 100vw;
+}
+
+.opponentGhost, .playerGhost {
+
+}
+
+.data {
+  display: none;
+}
+
+#p1b1, #p1b2, #p1b3, #p1b4, #p1y1, #p1y2, #p1y3, #p1y4, #p2b1, #p2b2, #p2b3, #p2b4, #p2y1, #p2y2, #p2y3, #p2y4 {
+  background-image: url(../img/ghosttokensback.png);
+  background-size: contain;
+  vertical-align: middle;
+  margin: auto;
+  height: 6vw;
+  width: 6vw;
+  position: relative;
+}
+
+#opponent {
+  background-image: url(../img/ghosttokensface.png);
+  background-size: contain;
+  vertical-align: middle;
+  margin: auto;
+  height: 6vw;
+  width: 6vw;
+  position: relative;
+}
+
+.yellow {
+  position: absolute;
+  background-color: yellow;
+  border-radius: 1.5vw;
+  vertical-align: middle;
+  margin: auto;
+  height: 3vw;
+  width: 3vw;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+
+.blue {
+  position: absolute;
+  background-color: blue;
+  border-radius: 1.5vw;
+  vertical-align: middle;
+  margin: auto;
+  height: 3vw;
+  width: 3vw;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+
+.head {
+  display: table-cell;
+  color: white;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.button {
+  background-color: #00c1c1;
+  border-color: black;
+  text-align: center;
+  font-size: 2vw;
+  cursor: pointer;
+  margin: 1vh;
+}
+
+.select {
+  border-color: black;
+  text-align: center;
+  font-size: 2vw;
+  cursor: pointer;
+  margin: 1vh;
+}
+
+.flash{
+  font - weight: bold;
+  text - decoration: underline;
+  color:  # f94102;
+}
+
+table {
+  border-collapse:collapse;
+}
+
+td {
+  border: 2px solid black;
+  margin: 0px;
+  padding: 0px;
+  background-color: #00c1c1;
+}
+
+tr {
+
+}
+
+h2 {
+  text-align: center;
+}
+
+h3 {
+  text-align: center;
+}
+
+body {
+  margin: 0px;
+  font-family: Helvetica;
+  background-color: #A74DEA;
+  overflow-y: hidden;
+}
+
+form {
+  align: center;
+}
+
+#turnSubmit {
+  display: none;
+}
+
+#submitTurn {
+  width: 8.33vw;
+}
+
+#header {
+  height: 9vh;
+  background-color: black;
+  display: table;
+}
+
+#canvas {
+  height: 91vh;
+  display: flex;
+}
+
+#last-up {
+  background-image: url(../img/ghosttokensup.png);
+  background-size: contain;
+  vertical-align: middle;
+  margin: auto;
+  height: 6vw;
+  width: 6vw;
+  position: relative;
+}
+
+#last-down {
+  background-image: url(../img/ghosttokensdown.png);
+  background-size: contain;
+  vertical-align: middle;
+  margin: auto;
+  height: 6vw;
+  width: 6vw;
+  position: relative;
+}
+
+#last-right {
+  background-image: url(../img/ghosttokensright.png);
+  background-size: contain;
+  vertical-align: middle;
+  margin: auto;
+  height: 6vw;
+  width: 6vw;
+  position: relative;
+}
+
+#last-left {
+  background-image: url(../img/ghosttokensleft.png);
+  background-size: contain;
+  vertical-align: middle;
+  margin: auto;
+  height: 6vw;
+  width: 6vw;
+  position: relative;
+}
+
+#board {
+  display: inline-block;
+}
+
+#side {
+  display: inline-block;
+}
+
+#one-a, #six-a {
+  border-left: 0px;
+}
+
+#one-f, #six-f {
+  border-right: 0px;
+}
+
+#menuContainer {
+  font-size: 2vw;
+  margin-left: auto;
+  margin-right: auto;
+  height: 50vh;
+  width: 40vw;
+}
+
+#existingUser {
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+  vertical-align: middle;
+  height: 18vw;
+  border-style: solid;
+  border-top: none;
+}
+
+
+#newUser {
+  display: none;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+  vertical-align: middle;
+  height: 18vw;
+  border-style: solid;
+  border-top: none;
+}
+
+#subMenuContainer {
+  display: flex;
+}
+
+#existing {
+  width: 20vw;
+  text-align: center;
+  border-style: solid;
+  border-bottom: none;
+  font-weight: bolder;
+}
+
+#new {
+  width: 20vw;
+  text-align: center;
+  border-style: solid;
+  border-width: 1px;
+  border-bottom-width: 3px;
+  font-weight: lighter;
+  cursor: pointer;
+}
+
+#newGame {
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+  vertical-align: middle;
+  height: 18vw;
+  border-style: solid;
+  border-top: none;
+}
+
+#continueGame, #options, #statistics {
+  display: none;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+  vertical-align: middle;
+  height: 18vw;
+  border-style: solid;
+  border-top: none;
+}
+
+#newGameOption {
+  width: 10vw;
+  text-align: center;
+  border-style: solid;
+  border-bottom: none;
+  font-weight: bolder;
+}
+
+#continueGameOption, #userOptionsOption, #statsOption {
+  width: 10vw;
+  text-align: center;
+  border-style: solid;
+  border-width: 1px;
+  border-bottom-width: 3px;
+  font-weight: lighter;
+  cursor: pointer;
+}
+
+#end {
+  position: fixed;
+  display: none;
+  z-index: 1;
+  text-align: center;
+  top: 15vh;
+  bottom: 5vh;
+  left: 25vw;
+  right: 25vw;
+  background-color: rgba(255,255,255,0.5);
+}

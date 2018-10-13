@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Probate Doctor!</title>
+	<link href="{{ url_for('static',filename='css/survey.css') }}" rel="stylesheet" type="text/css">
+</head>
+<body>
+	<div class="row" id="header">
+		<div class="col-3 head">
+			<h1>
+				<i>Probate Doctor!</i>
+			</h1>
+		</div>
+		<div class="col-6 head flash">
+			{% with messages=get_flashed_messages() %}
+				{% if messages %}
+					{% for message in messages %}
+						{{ message }}
+					{% endfor %}
+				{% endif %}
+			{% endwith %}
+		</div>
+		<div class="col-3 head">
+		</div>
+	</div>
+	<div class="row" id="canvas">
+		<br>
+		<div class="col-3" id="side"></div>
+		<div class="col-6">
+			<br>
+			<div id="menuContainer">
+				<div id="subMenuContainer">
+					<div id="existing">
+						Existing User
+					</div>
+					<div id="new">
+						New User
+					</div>
+				</div>
+				<div id="existingUser">
+					<br>
+					<form method="POST">
+						<span>
+							Username
+						</span>
+						<input type="text" name="username"></input>
+						<br>
+						<span>
+							Password
+						</span>
+						<input type="password" name="password"></input>
+						<br>
+						<input type="submit" value="Log In" class="button" name="login"></input>
+					</form>
+				</div>
+				<div id="newUser">
+					<br>
+					<form method="POST">
+						<span>
+							Username
+						</span>
+						<input type="text" name="newUsername"></input>
+						<br>
+						<span>
+							Password
+						</span>
+						<input type="password" name="newPassword"></input>
+						<br>
+						<span>
+							Confirm Password
+						</span>
+						<input type="password" name="confirmPassword"></input>
+						<br>
+						<input type="submit" value="Create User" class="button" name="login"></input>
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="col-3" id="side"></div>
+	</div>
+	<script type="text/javascript" src="{{ url_for('static',filename='js/libs/jquery.min.js') }}"></script>
+	<script type="text/javascript" src="{{ url_for('static',filename='js/login.js') }}"></script>
+</body>

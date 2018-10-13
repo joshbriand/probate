@@ -1,0 +1,267 @@
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.row {
+  width: 100vw;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.side {
+  width: 4.16vw;
+}
+
+.contactSide {
+  width: 0;
+}
+
+.between {
+  width: 8.33vw;
+}
+
+.col-2 {
+  width: 16.67vw;
+}
+
+.col-3 {
+  width: 25vw;
+}
+
+.col-4 {
+  width: 33.33vw;
+}
+
+.col-5 {
+  width: 41.67vw;
+}
+
+.col-6 {
+  width: 50vw;
+}
+
+.col-7 {
+  width: 58.33vw;
+}
+
+.col-8 {
+  width: 66.67vw;
+}
+
+.col-9 {
+  width: 75vw;
+}
+
+.col-10 {
+  width: 83.33vw;
+}
+
+.col-11 {
+  width: 91.67vw;
+}
+
+.col-12 {
+  width: 100vw;
+}
+
+body {
+  margin: 0px;
+  margin: 0px;
+  font-family: Helvetica;
+  background-image: url(../img/trees2.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  overflow-y: hidden;
+ }
+
+
+#slogan {
+	height: 81vh;
+	display: table;
+	position: absolute;
+}
+
+#actualSlogan {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+  color: white;
+  font-size: 11vh;
+  font-family: Brush Script MT;
+  text-shadow: 2px 2px black;
+}
+
+#header {
+  height: 8vh;
+  display: table;
+  border-bottom: 1px;
+  border-top: 0px;
+  border-right: 0px;
+  border-left: 0px;
+  border-style: solid;
+  border-color: black;
+}
+
+#contactLink, #merchLink, #webDevLink, #portfolioLink {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  background: rgba(255,255,255,.75);
+}
+
+#joshbriand, #navSpacer {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: left;
+  font-family: Brush Script MT;
+  font-size: 4vh;
+  padding-left: 25px;
+  background: rgba(255,255,255,.75);
+}
+
+#slideTitles {
+  display: table;
+}
+
+#content {
+  text-align: center;
+  font-size: 2.25vh;
+  background: rgba(255,255,255,.85);
+/*  border-color: black;
+  border-style: solid;
+  border-width: 0px;*/
+  padding: 10px;
+  flex-wrap: wrap;
+  max-height: 65vh;
+  min-height: 20px;
+  overflow-y: hidden;
+}
+
+#mobileBottom {
+  height: 0vh;
+}
+
+#desktopTop {
+  height: 8vh;
+}
+
+#spacer {
+  height: 8vh;
+}
+
+#mobileSpacer {
+  display: none;
+}
+
+a {
+  cursor: pointer;
+}
+
+#webDevContent, #merchContent, #contactContent, #portfolioContent {
+  display: none;
+  max-height: 65vh;
+  min-height: 20px;
+  overflow: hidden;
+  align-items:flex-start;
+  align-content:flex-start;
+}
+
+h2 {
+  font-size: 3vh;
+}
+
+@media screen and (min-width: 736px) and (orientation: landscape) {
+  .side {
+    width: 3.125vw;
+  }
+
+  .contactSide {
+    width: 27.085vw;
+  }
+}
+
+@media screen and (orientation: portrait) {
+  #header {
+    overflow: hidden;
+    position: fixed;
+    height: 30vh;
+    top: 0;
+  }
+
+  #siteContent {
+    width: 100vw;
+    margin-top: 33vh;
+    margin-bottom: 3vh;
+    overflow-y: scroll;
+  }
+
+  #slogan {
+    height: auto;
+  }
+
+  #joshbriand {
+    display: table-row;
+    font-size: 35px;
+    width: 100%;
+    text-align: center;
+  }
+
+  #contactLink, #merchLink, #webDevLink, #portfolioLink {
+    display: table-row;
+  }
+
+  h2 {
+    font-size: 35px;
+    margin: 10px;
+  }
+
+  #webDevContent, #merchContent, #contactContent, #portfolioContent {
+    width: 100vw;
+    overflow-y: scroll;
+  }
+
+  #webDevContent h2, #merchContent h2 {
+    margin: 0px;
+  }
+
+  #mobileSpacer {
+    display: flex;
+    height: 30px;
+  }
+
+  #mobileBottom {
+    height: 30px;
+  }
+
+  #desktopTop {
+    height: 0;
+  }
+
+  #actualSlogan {
+    font-size: 18vw;
+    width: 100vw;
+  }
+
+  .side {
+    width: 1.5vw;
+  }
+
+  #content {
+    width: 94vw;
+    height: auto;
+    font-size: 32px;
+  }
+
+  body {
+    position:fixed;
+    height: auto;
+  }
+
+  h1 {
+    margin: 0px;
+  }
+}
+
