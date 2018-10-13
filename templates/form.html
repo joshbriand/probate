@@ -8,12 +8,11 @@
 				{{ question.question }}
 				{% if question.mandatory == "true" %}
 					<i>*</i>
-					{{question.type}}
 				{% endif %}
 			</div>
 			{% if question.type == "text" %}
 				<input type="text" name="{{ question.id }}">
-			{% else %}
+			{% elif question.type == "radio" %}
 				{% if question.option1 %}
 					{% for result in results %}
 						{% if question.id == result.question.id and question.option1 == result.choice %}
@@ -84,6 +83,150 @@
 					{{ question.option5|safe }}
 					<br>
 				{% endif %}
+			{% elif question.type =="checkbox"%}
+				{% if question.option1 %}
+					{% for result in results %}
+						{% if question.id == result.question.id and question.option1 == result.choice %}
+							<input type="checkbox" name="{{ question.id }}" value="{{ question.option1 }}" checked="checked">
+						{% elif question.id == result.question.id %}
+							<input type="checkbox" name="{{ question.id }}" value="{{ question.option1 }}">
+						{% endif %}
+					{% endfor %}
+					{% if first == none %}
+						<input type="checkbox" name="{{ question.id }}" value="{{ question.option1 }}">
+					{% endif %}
+					{{ question.option1|safe }}
+					<br>
+				{% endif %}
+				{% if question.option2 %}
+					{% for result in results %}
+						{% if question.id == result.question.id and question.option2 == result.choice %}
+							<input type="checkbox" name="{{ question.id }}" value="{{ question.option2 }}" checked="checked">
+						{% elif question.id == result.question.id %}
+							<input type="checkbox" name="{{ question.id }}" value="{{ question.option2 }}">
+						{% endif %}
+					{% endfor %}
+					{% if first == none %}
+						<input type="checkbox" name="{{ question.id }}" value="{{ question.option2 }}">
+					{% endif %}
+					{{ question.option2|safe }}
+					<br>
+				{% endif %}
+				{% if question.option3 %}
+					{% for result in results %}
+						{% if question.id == result.question.id and question.option3 == result.choice %}
+							<input type="checkbox" name="{{ question.id }}" value="{{ question.option3 }}" checked="checked">
+						{% elif question.id == result.question.id %}
+							<input type="checkbox" name="{{ question.id }}" value="{{ question.option3 }}">
+						{% endif %}
+					{% endfor %}
+					{% if first == none %}
+						<input type="checkbox" name="{{ question.id }}" value="{{ question.option3 }}">
+					{% endif %}
+					{{ question.option3|safe }}
+					<br>
+				{% endif %}
+				{% if question.option4 %}
+					{% for result in results %}
+						{% if question.id == result.question.id and question.option4 == result.choice %}
+							<input type="checkbox" name="{{ question.id }}" value="{{ question.option4 }}" checked="checked">
+						{% elif question.id == result.question.id %}
+							<input type="checkbox" name="{{ question.id }}" value="{{ question.option4 }}">
+						{% endif %}
+					{% endfor %}
+					{% if first == none %}
+						<input type="checkbox" name="{{ question.id }}" value="{{ question.option4 }}">
+					{% endif %}
+					{{ question.option4|safe }}
+					<br>
+				{% endif %}
+				{% if question.option5 %}
+					{% for result in results %}
+						{% if question.id == result.question.id and question.option5 == result.choice %}
+							<input type="checkbox" name="{{ question.id }}" value="{{ question.option5 }}" checked="checked">
+						{% elif question.id == result.question.id %}
+							<input type="checkbox" name="{{ question.id }}" value="{{ question.option5 }}">
+						{% endif %}
+					{% endfor %}
+					{% if first == none %}
+						<input type="checkbox" name="{{ question.id }}" value="{{ question.option5	 }}">
+					{% endif %}
+					{{ question.option5|safe }}
+					<br>
+				{% endif %}
+			{% elif question.type == "dropdown" %}
+				<select>
+				{% if question.option1 %}
+					{% for result in results %}
+						{% if question.id == result.question.id and question.option1 == result.choice %}
+							<option value="{{ question.option1 }}" selected>{{ question.option1 }}</option>
+						{% elif question.id == result.question.id %}
+							<option value="{{ question.option1 }}">{{ question.option1 }}</option>
+						{% endif %}
+					{% endfor %}
+					{% if first == none %}
+						<option value="{{ question.option1 }}">{{ question.option1 }}</option>
+					{% endif %}
+					{{ question.option1|safe }}
+					<br>
+				{% endif %}
+				{% if question.option2 %}
+					{% for result in results %}
+						{% if question.id == result.question.id and question.option2 == result.choice %}
+							<option value="{{ question.option2 }}" selected>{{ question.option2 }}</option>
+						{% elif question.id == result.question.id %}
+							<option value="{{ question.option2 }}">{{ question.option2 }}</option>
+						{% endif %}
+					{% endfor %}
+					{% if first == none %}
+						<option value="{{ question.option2 }}">{{ question.option2 }}</option>
+					{% endif %}
+					{{ question.option2|safe }}
+					<br>
+				{% endif %}
+				{% if question.option3 %}
+					{% for result in results %}
+						{% if question.id == result.question.id and question.option3 == result.choice %}
+							<option value="{{ question.option3 }}" selected>{{ question.option3 }}</option>
+						{% elif question.id == result.question.id %}
+							<option value="{{ question.option3 }}">{{ question.option3 }}</option>
+						{% endif %}
+					{% endfor %}
+					{% if first == none %}
+						<option value="{{ question.option3 }}">{{ question.option3 }}</option>
+					{% endif %}
+					{{ question.option3|safe }}
+					<br>
+				{% endif %}
+				{% if question.option4 %}
+					{% for result in results %}
+						{% if question.id == result.question.id and question.option4 == result.choice %}
+							<option value="{{ question.option4 }}" selected>{{ question.option4 }}</option>
+						{% elif question.id == result.question.id %}
+							<option value="{{ question.option4 }}">{{ question.option4 }}</option>
+						{% endif %}
+					{% endfor %}
+					{% if first == none %}
+						<option value="{{ question.option4 }}">{{ question.option4 }}</option>
+					{% endif %}
+					{{ question.option4|safe }}
+					<br>
+				{% endif %}
+				{% if question.option5 %}
+					{% for result in results %}
+						{% if question.id == result.question.id and question.option5 == result.choice %}
+							<option value="{{ question.option5 }}" selected>{{ question.option5 }}</option>
+						{% elif question.id == result.question.id %}
+							<option value="{{ question.option5 }}">{{ question.option5 }}</option>
+						{% endif %}
+					{% endfor %}
+					{% if first == none %}
+						<option value="{{ question.option5 }}">{{ question.option5 }}</option>
+					{% endif %}
+					{{ question.option5|safe }}
+					<br>
+				{% endif %}
+				</select>
 			{% endif %}
 		</label>
 		<br>
